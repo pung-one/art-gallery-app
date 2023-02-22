@@ -1,10 +1,9 @@
-import ArtPiecePreview from "../ArtPiecePreview";
+import ArtPiecePreview from "../../components/ArtPiecePreview";
 
-export default function ArtPieces({ pieces }) {
-  console.log(pieces);
+export default function ArtPieces({ artData }) {
   return (
     <ul>
-      {pieces.map((piece) => {
+      {artData.map((piece) => {
         return (
           <li key={piece.slug}>
             <ArtPiecePreview
