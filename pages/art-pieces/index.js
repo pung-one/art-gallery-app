@@ -3,13 +3,14 @@ import ArtPiecePreview from "../../components/ArtPiecePreview";
 export default function ArtPieces({ artData }) {
   return (
     <ul>
-      {artData.map((piece) => {
+      {artData.map(({ slug, imageSource, name, artist }) => {
         return (
-          <li key={piece.slug}>
+          <li key={slug}>
             <ArtPiecePreview
-              image={piece.imageSource}
-              title={piece.name}
-              artist={piece.artist}
+              slug={slug}
+              image={imageSource}
+              name={name}
+              artist={artist}
             />
           </li>
         );

@@ -8,11 +8,11 @@ export default function SpotlightPage({ artData }) {
   console.log(artData.length);
   const { imageSource, name, artist } =
     artData[Math.floor(Math.random() * artData.length)];
-
+  console.log(artData);
   return (
     <div>
       {/* <ArtPieces pieces={data} /> */}
-      <Spotlight image={imageSource} title={name} artist={artist} />
+      <Spotlight image={imageSource} name={name} artist={artist} />
     </div>
   );
 }

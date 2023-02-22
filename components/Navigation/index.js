@@ -5,7 +5,7 @@ const StyledList = styled.ul`
   display: flex;
   justify-content: space-around;
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   font-size: 3vh;
   padding: 3vh;
