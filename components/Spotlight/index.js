@@ -1,5 +1,6 @@
 import Image from "next/image";
 import FavoriteButton from "../FavoriteButton";
+import { useState, useEffect } from "react";
 
 export default function Spotlight({
   image,
@@ -7,10 +8,22 @@ export default function Spotlight({
   artist,
   slug,
   onToggleFavorite,
+  artPiecesInfo,
 }) {
+  const [isFavorite, setIsFavorite] = useState(false);
+  const info = artPiecesInfo.find((element) => element.slug === slug);
+  useEffect(() => {
+    if (info) {
+      setIsFavorite(info.isFavorite);
+    }
+  }, [info]);
   return (
     <>
-      <FavoriteButton slug={slug} onToggleFavorite={onToggleFavorite} />
+      <FavoriteButton
+        slug={slug}
+        onToggleFavorite={onToggleFavorite}
+        isFavorite={isFavorite}
+      />
       <Image
         src={image}
         height={150}

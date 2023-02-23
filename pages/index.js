@@ -4,18 +4,24 @@ import { URL } from "./_app";
 import { useEffect, useState } from "react";
 import { useImmer } from "use-immer";
 
-export default function SpotlightPage({ artData, onToggleFavorite }) {
-  const { imageSource, name, artist, slug } =
-    artData[Math.floor(Math.random() * artData.length)];
+export default function SpotlightPage({
+  artData,
+  onToggleFavorite,
+  artPiecesInfo,
+}) {
+  const [randomPiece, setRandomPiece] = useState(
+    artData[Math.floor(Math.random() * artData.length)]
+  );
+  const { imageSource, name, artist, slug } = randomPiece;
   return (
     <div>
-      {/* <ArtPieces pieces={data} /> */}
       <Spotlight
         image={imageSource}
         name={name}
         artist={artist}
         onToggleFavorite={onToggleFavorite}
         slug={slug}
+        artPiecesInfo={artPiecesInfo}
       />
     </div>
   );
