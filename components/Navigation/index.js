@@ -16,9 +16,9 @@ const StyledList = styled.ul`
 export default function Navigation() {
   return (
     <StyledList>
-      <Link href={`/`}>Home</Link>
-      <Link href={`/art-pieces`}>All</Link>
-      <Link href={""}>Favourites</Link>
+      <Link href={"/"}>Home</Link>
+      <Link href={"/art-pieces"}>All</Link>
+      <Link href={"/favorites"}>Favourites</Link>
     </StyledList>
   );
 }
