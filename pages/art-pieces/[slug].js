@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
+import FavoriteButton from "../../components/FavoriteButton";
 
 export default function ArtPieceDetails({ artData }) {
   const router = useRouter();
@@ -8,6 +9,7 @@ export default function ArtPieceDetails({ artData }) {
   const { imageSource, name, artist, year, genre } = artPiece;
   return (
     <>
+      <FavoriteButton />
       <Image
         src={imageSource}
         height={150}

@@ -10,6 +10,7 @@ const StyledList = styled.ul`
   font-size: 3vh;
   padding: 3vh;
   background-color: lightgray;
+  z-index: 201;
 `;
 
 export default function Navigation() {
